@@ -14,10 +14,10 @@
 
 ## Результаты выполнения тестов
 
-**Всего собрано тестов:** 27  
-**Успешно выполнено:** 27 (100 %)  
-**Процент покрытия кода:** ~85 %  
-**Время выполнения:** 0,12 с  
+**Всего собрано тестов:** 30  
+**Успешно выполнено:** 30 (100 %)  
+**Процент покрытия кода:** ~90 %  
+**Время выполнения:** 0,14 с  
 
 > **Примечание о покрытии:**  
 > * 85 % — оценочное покрытие ключевых методов и сценариев класса `BooksCollector`.
@@ -30,33 +30,33 @@
 
 | № | Название теста | Статус | Покрытие функционала |
 |---|--------------|--------|-------------------|
-| 1 | `test_add_new_book_add_two_books` | PASSED | 95 % (добавление нескольких книг) |
-| 2 | `test_initial_state` | PASSED | 100 % (инициализация класса) |
-| 3 | `test_add_new_book_correct_add_book_successful_add` | PASSED | 90 % (корректное добавление книги) |
-| 4 | `test_add_new_book_incorrect_add_book_unsuccessful_add[Азбука-1]` | PASSED | 85 % (обработка корректного названия) |
-| 5 | `test_add_new_book_incorrect_add_book_unsuccessful_add[-0]` | PASSED | 95 % (обработка пустого названия) |
-| 6 | `test_add_new_book_incorrect_add_book_unsuccessful_add[АзбукаАзбукаАзбукаАзбукаАзбукаАзбукаАзбукаАзбукаАзбука-0]` | PASSED | 95 % (обработка слишком длинного названия) |
-| 7 | `test_add_new_book_one_book` | PASSED | 95 % (базовое добавление одной книги) |
-| 8 | `test_add_new_book_empty_name` | PASSED | 100 % (проверка пустого названия) |
-| 9 | `test_add_new_book_too_long_name` | PASSED | 100 % (проверка длины названия > 40 символов) |
-| 10 | `test_set_book_genre[Книга о фантастике-Фантастика]` | PASSED | 90 % (установка допустимого жанра) |
-| 11 | `test_set_book_genre[Страшный рассказ-Ужасы]` | PASSED | 90 % (установка допустимого жанра) |
-| 12 | `test_set_book_genre[Детективная история-Детективы]` | PASSED | 90 % (установка допустимого жанра) |
-| 13 | `test_set_book_genre[Мультфильм для детей-Мультфильмы]` | PASSED | 90 % (установка допустимого жанра) |
-| 14 | `test_set_book_genre[Комедийная повесть-Комедии]` | PASSED | 90 % (установка допустимого жанра) |
-| 15 | `test_set_book_genre_invalid_genre` | PASSED | 100 % (отказ от установки недопустимого жанра) |
-| 16 | `test_get_books_with_specific_genre` | PASSED | 95 % (поиск книг по жанру) |
-| 17 | `test_get_books_for_children` | PASSED | 95 % (фильтрация книг для детей) |
-| 18 | `test_add_book_in_favorites` | PASSED | 95 % (добавление в избранное) |
-| 19 | `test_delete_book_from_favorites` | PASSED | 95 % (удаление из избранного) |
-| 20 | `test_add_nonexistent_book_to_favorites` | PASSED | 100 % (обработка несуществующей книги) |
-| 21 | `test_set_book_genre_correct_genre_success` | PASSED | 95 % (успешная установка корректного жанра) |
-| 22 | `test_set_book_genre_incorrect_genre_unsuccess` | PASSED | 100 % (неуспешная установка некорректного жанра) |
-| 23 | `test_get_book_genre` | PASSED | 100 % (получение жанра книги) |
-| 24 | `test_get_books_with_specific_genre_duplicate` | PASSED | 90 % (альтернативный сценарий поиска по жанру) |
-| 25 | `test_get_books_genre` | PASSED | 100 % (получение полного словаря книг с жанрами) |
-| 26 | `test_get_books_for_children_duplicate` | PASSED | 90 % (альтернативный сценарий фильтрации для детей) |
-| 27 | `test_get_list_of_favorites_books` | PASSED | 100 % (получение списка избранного) |
+1	test_add_new_book_add_two_books	PASSED	95 % (добавление нескольких книг)
+2	test_initial_state	PASSED	100 % (инициализация класса)
+3	test_add_new_book_correct_add_book_successful_add	PASSED	90 % (корректное добавление книги)
+4	test_add_new_book_incorrect_add_book_unsuccessful_add[Азбука-1]	PASSED	85 % (обработка корректного названия)
+5	test_add_new_book_incorrect_add_book_unsuccessful_add[-0]	PASSED	95 % (обработка пустого названия)
+6	test_add_new_book_incorrect_add_book_unsuccessful_add[АзбукаАзбукаАзбука...]	PASSED	95 % (обработка слишком длинного названия)
+7	test_add_new_book_one_book	PASSED	95 % (базовое добавление одной книги)
+8	test_add_new_book_empty_name	PASSED	100 % (проверка пустого названия)
+9	test_add_new_book_too_long_name	PASSED	100 % (проверка длины названия > 40 символов)
+10	test_set_book_genre[Книга о фантастике-Фантастика]	PASSED	90 % (установка допустимого жанра)
+11	test_set_book_genre[Страшный рассказ-Ужасы]	PASSED	90 % (установка допустимого жанра)
+12	test_set_book_genre[Детективная история-Детективы]	PASSED	90 % (установка допустимого жанра)
+13	test_set_book_genre[Мультфильм для детей-Мультфильмы]	PASSED	90 % (установка допустимого жанра)
+14	test_set_book_genre[Комедийная повесть-Комедии]	PASSED	90 % (установка допустимого жанра)
+15	test_set_book_genre_invalid_genre	PASSED	100 % (отказ от установки недопустимого жанра)
+16	test_get_books_with_specific_genre	PASSED	95 % (поиск книг по жанру)
+17	test_get_books_for_children	PASSED	95 % (фильтрация книг для детей)
+18	test_add_book_in_favorites	PASSED	95 % (добавление в избранное)
+19	test_delete_book_from_favorites	PASSED	95 % (удаление из избранного)
+20	test_add_nonexistent_book_to_favorites	PASSED	100 % (обработка несуществующей книги)
+21	test_set_book_genre_correct_genre_success	PASSED	95 % (успешная установка корректного жанра)
+22	test_set_book_genre_incorrect_genre_unsuccess	PASSED	100 % (неуспешная установка некорректного жанра)
+23	test_get_book_genre	PASSED	100 % (получение жанра книги)
+24	test_get_books_with_specific_genre_duplicate	PASSED	90 % (альтернативный сценарий поиска по жанру)
+25	test_get_books_genre	PASSED	100 % (получение полного словаря книг с жанрами)
+26	test_get_books_for_children_duplicate	PASSED	90 % (альтернативный сценарий фильтрации для детей)
+
 
 ## Покрытые сценарии тестирования
 
@@ -85,7 +85,7 @@
 
 ## Вывод
 
-Приложение `BooksCollector` успешно прошло все 27 тестов. Все функциональные возможности работают корректно, ошибок не обнаружено. Покрытие тестами является полным для реализованного функционала (оценочно 85 %). Для достижения 100 % покрытия рекомендуется:
+Приложение `BooksCollector` успешно прошло 30 тестов. Все функциональные возможности работают корректно, ошибок не обнаружено. Покрытие тестами является полным для реализованного функционала (оценочно 90 %). Для достижения 100 % покрытия рекомендуется:
 * добавить тесты на редкие граничные случаи;
 * проверить обработку параллельных операций, если таковые предусмотрены;
 * протестировать внутренние вспомогательные методы класса, если они не покрыты текущими тестами.

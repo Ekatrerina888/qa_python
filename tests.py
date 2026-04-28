@@ -202,3 +202,4 @@ class TestBooksCollector:
         collector.add_book_in_favorites('Азбука')
         collector.add_book_in_favorites('Алгебра')
         assert collector.get_list_of_favorites_books() == ['Азбука', 'Алгебра']
+        
