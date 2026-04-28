@@ -19,11 +19,16 @@ class TestBooksCollector:
 
         # проверяем, что добавилось именно две
         # словарь books_genre, который нам возвращает метод get_books_genre, имеет длину 2
+        # В исходном коде было добавлено это правило "assert len(collector.get_books_rating()) == 2", но данный метод некорректный. В классе BooksCollector не существует этого метода. В задании не указано, что нам необходимо менять данные в классе. Внесела корректировки в предложенный тестовый пример. Правильный метод — get_books_genre(). 
         assert len(collector.get_books_genre()) == 2
 
-    def test_initial_state(self):
+    def test_initial_state_books_genre_empty(self):
         collector = BooksCollector()
-        assert collector.get_books_genre() == {} and collector.get_list_of_favorites_books() == []
+        assert collector.get_books_genre() == {}, "Словарь books_genre должен быть пустым при инициализации"
+
+    def test_initial_state_favorites_list_empty(self):
+        collector = BooksCollector()
+        assert collector.get_list_of_favorites_books() == [], "Список избранных книг должен быть пустым при инициализации"
 
     def test_add_new_book_correct_add_book_successful_add(self):
         collector = BooksCollector()
@@ -95,16 +100,21 @@ class TestBooksCollector:
         assert 'Звёздный путь' in fantasy_books
         assert len(fantasy_books) == 1
 
-    # Тест на список книг для детей (без жанров из genre_age_rating)
-    def test_get_books_for_children(self):
+    # Тест на список книг для детей (книга для детей присутствует в списке)
+    def test_get_books_for_children_included(self):
         collector = BooksCollector()
         collector.add_new_book('Детская сказка')
         collector.set_book_genre('Детская сказка', 'Мультфильмы')
+        children_books = collector.get_books_for_children()
+        assert 'Детская сказка' in children_books, "Книга с допустимым жанром должна быть в списке для детей"
+
+    # Тест на список книг для детей (книга не для детей отсутствует в списке)
+    def test_get_books_for_children_excluded(self):
+        collector = BooksCollector()
         collector.add_new_book('Страшная история')
         collector.set_book_genre('Страшная история', 'Ужасы')
         children_books = collector.get_books_for_children()
-        assert 'Детская сказка' in children_books
-        assert 'Страшная история' not in children_books
+        assert 'Страшная история' not in children_books, "Книга с недопустимым жанром не должна быть в списке для детей"
 
     # Тест на добавление книги в «Избранное»
     def test_add_book_in_favorites(self):
@@ -171,7 +181,8 @@ class TestBooksCollector:
 
         assert collector.get_books_for_children() == ['Детская']
 
-    def test_add_book_in_favorites(self):
+    # Второй тест (переименован)
+    def test_add_book_in_favorites_check_list_content(self):
         collector = BooksCollector()
         collector.add_new_book('Азбука')
         collector.add_book_in_favorites('Азбука')
